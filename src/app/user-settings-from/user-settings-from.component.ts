@@ -7,7 +7,7 @@ import {usersettings} from '../data/user.settings';
   styleUrls: ['./user-settings-from.component.css']
 })
 export class UserSettingsFromComponent implements OnInit {
-  usersettings:usersettings=
+  Originalusersettings:usersettings=
     {
       name:'hichem',
       emailOffers:true,
@@ -16,6 +16,7 @@ export class UserSettingsFromComponent implements OnInit {
       notes:'he are some ........'
 
     }
+  usersettings:usersettings={...this.Originalusersettings}
 
   constructor() { }
 
