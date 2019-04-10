@@ -9,11 +9,11 @@ import {usersettings} from '../data/user.settings';
 export class UserSettingsFromComponent implements OnInit {
   Originalusersettings:usersettings=
     {
-      name:'hichem',
-      emailOffers:true,
-      interfacestyle:'Dark',
-      subscriptionType:'Annualy',
-      notes:'he are some ........'
+      name:null,
+      emailOffers:null,
+      interfacestyle:null,
+      subscriptionType:null,
+      notes:null
 
     }
   usersettings:usersettings={...this.Originalusersettings}
