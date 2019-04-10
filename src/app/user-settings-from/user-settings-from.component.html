@@ -1,12 +1,12 @@
 <div class="container">
   <h2>User settings</h2>
-  <form #form="ngForm" ngNativeValidate>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" required id="name" name="name"
-           #namefield="ngModel" [(ngModel)]="usersettings.name">
+           #namefield="ngModel" [(ngModel)]="usersettings.name" [class.fiels-eroor]="form.submitted && namefield.invalid">
     </div>
-    <div class="alert alert-danger" [hidden]="namefield.valid || namefield.untouched">
+    <div class="alert alert-danger" [hidden]="!form.submitted || namefield.valid">
       Enter a name
 
     </div>
@@ -52,7 +52,7 @@
       <label for="Notes">Notes</label>
       <textarea class="form-control" id="Notes" rows="3" name="notes" [(ngModel)]="usersettings.notes"></textarea>
     </div>
-    <button class="btn btn-primary">Send</button>
+    <button class="btn btn-primary" >Send</button>
   </form>
 
 </div>
